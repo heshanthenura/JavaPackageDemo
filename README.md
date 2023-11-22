@@ -93,3 +93,16 @@ After generating the MSI (Microsoft Installer) file using this command, you can 
 #### Updating soon
 ### 2.3 MacOS
 #### Updating soon
+
+
+### If you're interested in custom application development or would like to discuss a project, please don't hesitate to contact me.
+
+<ul>
+    <li><a href="https://twitter.com/Heshantk">Twitter</a></li>
+    <li><a href="https://www.linkedin.com/in/heshanthenura">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/heshan_thenura/">Instagram</a></li>
+    <li><a href="https://youtube.com/@heshanthenura">YouTube</a></li>
+    <li><a href="https://www.tiktok.com/@heshanthenura">TikTok</a></li>
+</ul>
+
+### [E-Mail](mailto:heshanthenura@protonmail.com) heshanthenura@protonmail.com
