@@ -14,5 +14,5 @@ Discover how to package and distribute your JavaFX application seamlessly to cli
 
 ### Read Below before start
 
-* ### To proceed smoothly, ensure you have Gradle set up and configured for your project
-* ### If Gradle isn't utilized, the process requires manually assembling a functional JAR file containing all essential dependencies, external JARs, as well as crucial assets and resources. This involves carefully bundling these components together to ensure the application operates seamlessly.
+* ### To proceed smoothly, ensure you have `Gradle` set up and configured for your project
+* ### If Gradle isn't utilized, the process requires manually assembling a functional `JAR` file containing all essential dependencies, external JARs, as well as crucial assets and resources. This involves carefully bundling these components together to ensure the application operates seamlessly.
