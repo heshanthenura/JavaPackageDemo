@@ -28,8 +28,12 @@ jobs:
       - name: Run customFatJar task
         run: ./gradlew customFatJar
 
+      - name: List contents of build/libs directory
+        run: ls -l build/libs
+
       - name: Upload FatJar as artifact
         uses: actions/upload-artifact@v2
         with:
           name: customFatJarArtifact
-          path: build/libs/PackageDemoJAR.jar
+          path: ${{ github.workspace }}/build/libs/
+
