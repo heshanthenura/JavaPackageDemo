@@ -4,11 +4,11 @@
 Discover how to package and distribute your JavaFX application seamlessly to clients or users, eliminating the need for them to pre-install the Java SDK
 
 ## Menu
-### 1. Prerequisites
+### 1. [Prerequisites](#1-prerequisites-1)
 ### 2. How to package and distribute
 - ### Windows
 - ### Linux
-- ### MacOS
+- ### [MacOS](#23-macos)
 
 ## 1. Prerequisites
 
