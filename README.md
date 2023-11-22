@@ -87,7 +87,7 @@ jpackage --input build/ --name PackageDemo --main-jar <mPackageDemoJAR.jar > --m
 | ```--type <msi / exe>```          | Specifies the type of package to create, in this instance, a ```exe``` or ```msi``` for Windows. Recommended to use type as ```msi```               |
 | ```--win-dir-chooser```           | This enables users to choose where they want to install the application on their Windows system                                                     |                                                                                                                                               |
 
-After executing this command, it will generate an MSI (Microsoft Installer) file containing the packaged application for Windows
+After generating the MSI (Microsoft Installer) file using this command, you can effortlessly share it with users or clients, ensuring a hassle-free installation without concerns about Java Runtime Environment (JRE) or other dependency errors
 
 ### 2.2 Linux
 #### Updating soon
