@@ -5,9 +5,9 @@ Discover how to package and distribute your JavaFX application seamlessly to cli
 
 ## Menu
 ### 1. [Prerequisites](#1-prerequisites-1)
-### 2. How to package and distribute
-- ### Windows
-- ### Linux
+### 2. [How to package and distribute](#2-how-to-package-and-distribute-1)
+- ### [Windows](#21-windows)
+- ### [Linux](#22-linux)
 - ### [MacOS](#23-macos)
 
 ## 1. Prerequisites
