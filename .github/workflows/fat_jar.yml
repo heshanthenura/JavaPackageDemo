@@ -10,19 +10,12 @@ on:
       - main
 
 jobs:
-  build:
+  build-gradle-project:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'  # Set your desired Java version
-
-      - name: Build custom FatJar
-        run: |
-          chmod +x gradlew  # Ensure gradlew is executable
-          ./gradlew customFatJar
+      - name: Checkout project sources
+        uses: actions/checkout@v3
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Run build with Gradle Wrapper
+        run: ./gradlew customFatJar
