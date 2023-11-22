@@ -32,3 +32,6 @@ jobs:
 
       - name: Run customFatJar task
         run: ./gradlew customFatJar
+
+      - name: List contents of build/libs directory
+        run: ls -l build/libs
