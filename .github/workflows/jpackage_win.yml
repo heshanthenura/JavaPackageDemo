@@ -34,11 +34,11 @@ jobs:
       - name: List contents of build/libs directory
         run: ls -l build/libs
 
-      - name: Upload FatJar as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: customFatJarArtifact
-          path: ${{ github.workspace }}\build\libs\
+#      - name: Upload FatJar as artifact
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: customFatJarArtifact
+#          path: ${{ github.workspace }}\build\libs\
 
       - name: List contents of build/libs directory
         run: jpackage --help
