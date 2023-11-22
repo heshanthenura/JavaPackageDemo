@@ -35,7 +35,7 @@ jobs:
         run: dir build\libs
 
       - name: Check jpackage availability
-        run: jpackage --input build\libs\ --name PackageDemo --main-jar PackageDemoJAR-1.0-SNAPSHOT.jar --main-class com.heshanthenura.packagedemo.Launcher --type msi --win-dir-chooser --output build\win\
+        run: jpackage --input build\libs\ --name PackageDemo --main-jar PackageDemoJAR-1.0-SNAPSHOT.jar --main-class com.heshanthenura.packagedemo.Launcher --type msi --win-dir-chooser --dest build\win\
 
       - name: List contents of build/win directory
         run: dir build\win
