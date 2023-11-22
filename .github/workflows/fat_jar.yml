@@ -23,4 +23,6 @@ jobs:
           java-version: '17'  # Set your desired Java version
 
       - name: Build custom FatJar
-        run: ./gradlew customFatJar
+        run: |
+          chmod +x gradlew  # Ensure gradlew is executable
+          ./gradlew customFatJar
