@@ -35,5 +35,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: customFatJarArtifact
-          path: ${{ github.workspace }}/build/libs/PackageDemoJAR-1.0-SNAPSHOT.jar
+          path: ${{ github.workspace }}/build/libs/
 
