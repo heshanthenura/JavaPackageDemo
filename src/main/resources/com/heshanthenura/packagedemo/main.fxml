@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.heshanthenura.packagedemo.MainController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefWidth="677.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Java is easy to distribute">
+                     <font>
+                        <Font name="Impact" size="32.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="281.0" prefWidth="531.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="281.0" prefWidth="203.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
+                           <font>
+                              <Font name="Impact" size="32.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="count" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                           <font>
+                              <Font name="Impact" size="32.0" />
+                           </font>
+                        </Text>
+                        <Button mnemonicParsing="false" onMouseClicked="#addCount" style="-fx-background-color: #1e1e1e;" text="Click to count" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
