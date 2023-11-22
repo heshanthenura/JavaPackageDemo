@@ -1,0 +1,34 @@
+name: JPackage for Linux
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'  # Set your desired Java version
+
+      - name: Build and package for Linux
+        run: |
+          # Add commands to build your project here
+          # For example:
+          # ./gradlew build
+          # jpackage command for Linux
+          jpackage --input target/ \
+            --name YourAppName \
+            --main-jar YourAppMainJar.jar \
+            --main-class com.example.MainClass \
+            --type deb  # or any other Linux package format
