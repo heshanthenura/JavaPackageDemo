@@ -60,7 +60,36 @@ To validate the functionality of your JAR file, execute it using the command: ``
 ## 2. How to package and distribute
 ### To successfully package and distribute the application, leveraging the ```jpackage``` utility becomes essential for streamlining the process
 
+### find ```jpackage``` documentation [here](https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html)
+
 ```jpackage``` is generally included as part of the JDK starting from Java 14. However, in certain cases or older versions where it might not be bundled or available by default, you can manually download the JDK that includes ```jpackage``` from the official [Oracle](https://www.oracle.com/java/technologies/downloads/) or [OpenJDK](https://openjdk.org/) website.
 Ensure you download a JDK version that explicitly mentions support for ```jpackage```. After downloading and installing the JDK, you should have access to the jpackage tool in the JDK's bin directory
 
-### To confirm whether ```jpackage``` is installed on your system, run the command ```jpackage --help``` on CMD or Terminal. If installed, this command will display the help information for the ```jpackage``` utility, confirming its presence and functionality.
+To confirm whether ```jpackage``` is installed on your system, run the command ```jpackage --help``` on CMD or Terminal. If installed, this command will display the help information for the ```jpackage``` utility, confirming its presence and functionality.
+### 2.1 Windows
+#### For Windows, it's necessary to install the [WiX Toolset](https://wixtoolset.org/docs/wix3/), version 3.0 or later
+After completing the prerequisites, execute the following command
+```shell
+jpackage --input <direcory of jar file> --name <name> --main-jar <main jar file > --main-class <main class> --type <type> --win-dir-chooser
+```
+```
+Example command
+jpackage --input build/ --name PackageDemo --main-jar <mPackageDemoJAR.jar > --main-class <com.heshanthenura.packagedemo.Launcher> --type msi --win-dir-chooser
+```
+
+| Attribute                         | Description                                                                                                                                         |
+|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| ```jpackage```                    | Invokes the ```jpackage``` tool, used for packaging Java applications                                                                               |
+| ```--input <path to jar file>```  | Specifies the input directory containing the application files to be packaged. In this case, it's the target/ directory                             |
+| ```--name <name>```               | Sets the name for the packaged application as you like                                                                                              |
+| ```--main-jar <main jar file >``` | Specifies the main JAR file related to directory where it's located of the application.                                                             |
+| ```--main-class <main class>```   | Defines the main class of the application, specifying the entry point for execution. specify what we enter as main class in ```customFatJar``` task |
+| ```--type <msi / exe>```          | Specifies the type of package to create, in this instance, a ```exe``` or ```msi``` for Windows. Recommended to use type as ```msi```               |
+| ```--win-dir-chooser```           | This enables users to choose where they want to install the application on their Windows system                                                     |                                                                                                                                               |
+
+After executing this command, it will generate an MSI (Microsoft Installer) file containing the packaged application for Windows
+
+### 2.2 Linux
+#### Updating soon
+### 2.3 MacOS
+#### Updating soon
