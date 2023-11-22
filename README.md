@@ -1,3 +1,18 @@
-## <h1 align="center">How To Package JavaFX Application</h1>
+# <h1 align="center">How To Package JavaFX Application</h1>
 
-Here you can learn how to package and distribute your JavaFX application to your clients or users so they don't have to pre install java sdk
+
+Discover how to package and distribute your JavaFX application seamlessly to clients or users, eliminating the need for them to pre-install the Java SDK
+
+## Menu
+### 1. Prerequisites
+### 2. How to package and distribute
+- ### Windows
+- ### Linux
+- ### MacOS
+
+## 1. Prerequisites
+
+### Read Below before start
+
+* ### To proceed smoothly, ensure you have Gradle set up and configured for your project
+* ### If Gradle isn't utilized, the process requires manually assembling a functional JAR file containing all essential dependencies, external JARs, as well as crucial assets and resources. This involves carefully bundling these components together to ensure the application operates seamlessly.
