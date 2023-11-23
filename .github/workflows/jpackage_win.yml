@@ -31,28 +31,31 @@ jobs:
       - name: Run customFatJar task
         run: ./gradlew customFatJar
 
-      - name: List contents of build/libs directory
-        run: dir build\libs
-
       - name: Check jpackage availability
-        run: jpackage --input build\libs\ --name PackageDemo --main-jar PackageDemoJAR-1.0-SNAPSHOT.jar --main-class com.heshanthenura.packagedemo.Launcher --type msi --win-dir-chooser --dest build\win\ --win-menu --win-shortcut --app-version 1.0 --vendor "Heshan Thenura"
+        run: |
+          jpackage --input build\libs\ --name PackageDemo --main-jar PackageDemoJAR-1.0-SNAPSHOT.jar --main-class com.heshanthenura.packagedemo.Launcher --type msi --win-dir-chooser --dest build\win\ --win-menu --win-shortcut --app-version 1.0 --vendor "Heshan Thenura"
 
       - name: List contents of build/win directory
         run: dir build\win
 
-      - name: Upload MSI
-        uses: actions/upload-artifact@v2
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: PackageDemo
-          path: build\win\
-
+          tag_name: v1.0
+          release_name: JpackageDemo-win
+          draft: false
+          prerelease: false
 
       - name: Upload MSI to release
+        if: success()
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: build/win/PackageDemo-1.0.msi  # Path to the MSI file
-          asset_name: PackageDemo.msi  # Desired name of the asset in the release
+          asset_path: build/win/PackageDemo-1.0.msi
+          asset_name: PackageDemo.msi
           asset_content_type: application/octet-stream
