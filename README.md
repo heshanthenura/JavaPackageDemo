@@ -90,7 +90,25 @@ jpackage --input build/ --name PackageDemo --main-jar <mPackageDemoJAR.jar > --m
 After generating the MSI (Microsoft Installer) file using this command, you can effortlessly share it with users or clients, ensuring a hassle-free installation without concerns about Java Runtime Environment (JRE) or other dependency errors
 
 ### 2.2 Linux
-#### Updating soon
+
+#### For Linux, it's necessary to install ```fakeroot```
+Run the following command to install fake root
+```apt-get install fakeroot -y```
+#### For Red Hat Linux, it's necessary to install ```rpm-build package```
+Run following command to install rpm-build package
+```apt-get install fakeroot -y```
+Using yum (older versions of RHEL or CentOS):
+```sudo yum install rpm-build```
+
+After completing the prerequisites, execute the following command
+```shell
+jpackage --input <direcory of jar file> --name <name> --main-jar <main jar file > --main-class <main class> --type <type>
+```
+| Attribute                | Description                                                                                                                                                                        |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ```--type <rpm / deb>``` | Specifies the type of package to create,```rpm``` for Red Hat-based systems like Fedora, CentOS, and RHEL.```deb``` for Debian-based systems like Ubuntu, Debian, and derivatives. |
+
+After creating the package, please share the generated rpm or deb package with your users for installation on their respective systems.
 ### 2.3 MacOS
 #### Updating soon
 
