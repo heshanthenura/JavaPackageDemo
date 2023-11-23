@@ -33,7 +33,7 @@ jobs:
 
       - name: Check jpackage availability
         run: |
-          fakeroot jpackage --input build/libs/ --name PackageDemo --main-jar PackageDemoJAR-1.0-SNAPSHOT.jar --main-class com.heshanthenura.packagedemo.Launcher --type deb --dest build/linux/ --linux-menu --linux-shortcut --app-version 1.0 --vendor "Heshan Thenura"
+          fakeroot jpackage --input build/libs/ --name PackageDemo --main-jar PackageDemoJAR-1.0-SNAPSHOT.jar --main-class com.heshanthenura.packagedemo.Launcher --type deb --dest build/linux/ --app-version 1.0 --vendor "Heshan Thenura"
 
       - name: List contents of build/linux directory
         run: ls -l build/linux
