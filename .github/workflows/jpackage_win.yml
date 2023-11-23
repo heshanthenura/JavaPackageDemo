@@ -38,16 +38,16 @@ jobs:
       - name: List contents of build/win directory
         run: dir build\win
 
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v1.0
-          release_name: JpackageDemo-win
-          draft: false
-          prerelease: false
+#      - name: Create release
+#        id: create_release
+#        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: v1.0
+#          release_name: JpackageDemo-win
+#          draft: false
+#          prerelease: false
 
       - name: Upload MSI to release
         if: success()
@@ -57,5 +57,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: build/win/PackageDemo-1.0.msi
-          asset_name: PackageDemo.msi
+          asset_name: PackageDemo-win.msi
           asset_content_type: application/octet-stream
