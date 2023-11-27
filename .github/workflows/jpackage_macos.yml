@@ -1,0 +1,63 @@
+name: Jpackage macOS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-gradle-project-macOS:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout project sources
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: '7.3.3'
+
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
+      - name: Run customFatJar task
+        run: ./gradlew customFatJar
+
+      - name: Check jpackage availability
+        run: jpackage --input build/libs/ --name PackageDemo --main-jar PackageDemoJAR-1.0-SNAPSHOT.jar --main-class com.heshanthenura.packagedemo.Launcher --type deb --dest build/macos/ --app-version 1.0 --vendor "Heshan Thenura"
+
+      - name: List contents of build/macos directory
+        run: ls -l build/macos
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: PackageDemo-macOS
+          path: build/macos/*
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: macOS-v1.0
+          release_name: JpackageDemo-macOS
+          draft: false
+          prerelease: false
+
+      - name: Upload artifact to release
+        if: success()
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: build/macos/PackageDemo-1.0.dmg
+          asset_name: PackageDemo-1.0.dmg
+          asset_content_type: application/octet-stream
