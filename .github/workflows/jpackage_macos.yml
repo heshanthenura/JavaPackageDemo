@@ -29,7 +29,7 @@ jobs:
         run: ./gradlew customFatJar
 
       - name: Check jpackage availability
-        run: jpackage --input build/libs/ --name PackageDemo --main-jar PackageDemoJAR-1.0-SNAPSHOT.jar --main-class com.heshanthenura.packagedemo.Launcher --type deb --dest build/macos/ --app-version 1.0 --vendor "Heshan Thenura"
+        run: jpackage --input build/libs/ --name PackageDemo --main-jar PackageDemoJAR-1.0-SNAPSHOT.jar --main-class com.heshanthenura.packagedemo.Launcher --type dmg --dest build/macos/ --app-version 1.0 --vendor "Heshan Thenura"
 
       - name: List contents of build/macos directory
         run: ls -l build/macos
